@@ -29,4 +29,13 @@ public:
 		ROOT = nullptr;  //Initializing ROOT to null
 	}
 
-	
+	void insert(string element) // Insert a node in the binary search tree
+	{
+		Node* newNode = new Node(element, nullptr, nullptr); // Allocate memory for the new node
+		newNode->info = element;  //Assign value to the data field of the new data
+		newNode->leftchild = nullptr;  // Make the left child of the new node point to NULL
+		newNode->rightchild = nullptr;  // Make the right child of the new data point to NULL
+
+		Node* parent = nullptr;
+		Node* currentNode = nullptr;
+		search(element, parent, currentNode);  // Locate the node which be the parent of the node to be inserted
